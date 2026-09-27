@@ -2,7 +2,7 @@
 **Nama:** Ainun Naila Nafhat  
 **Nim:** 1251170013  
 **Kelas:** 3B
-
+**Mata Kuliah:** Algoritma dan  Struktur Data
 **Materi:** Struktur Kontrol & Representasi Pseudocode  
 **Studi Kasus:** Sistem Transaksi & Validasi Toko Buku Modern  
 
@@ -17,10 +17,17 @@
 *  'total_bayar: Real (untuk menyimpan total akhir yang dibayar)
 
 **Identifikasi Struktur Kontrol**
-*  **Sequence:**
+*  **Sequence:** 
 *  **Percabanga:**
 *  **Perulangan:**
 
 ---
 ## B Penyusunan Pseudocode
-
+Program Transaksi_TokoBuku
+* **Deklarasi**
+    *is_member: Boolean
+    *jumlah_buku: Integer
+    *total_awal: Real 
+    *persentase_diskon: Real 
+    *nominal_diskon: Real 
+    *total_bayar: Real 
