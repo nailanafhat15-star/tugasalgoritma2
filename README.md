@@ -18,8 +18,8 @@
 
 **Identifikasi Struktur Kontrol**
 *  **Sequence:** Digunakan untuk bagian - bagian yang dijalankan secara berurutan dari atas ke bawah tanpa syarat, pada input status keanggotaan, perhitungan diskon dan tottal biaya serta hasil akhir.
-*  **Percabanga:** 
-*  **Perulangan:**
+*  **Percabanga:** Digunakan dalam bentuk IF ELSE, penentuan besaran diskon bergantunga pada dua tahap pengecekan. Tahap pertama membedakan pelanggan berdasarkan status keanggotaan, yaitu member atau non-member, tahap kedua mengecek syarat tambahan diskon.
+*  **Perulangan:** Digunakan pada tahap validasi input di awal dalam bentuk reppeat dan until. Perulangan akan terus berjalan selama total belanja bernilai negatif atau jumlah buku kurang dari satu, dan baru berhenti setelah kedua syarat tersebut terpenuhi secara bersamaan.
 
 ---
 ## B Penyusunan Pseudocode
