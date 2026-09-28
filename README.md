@@ -73,5 +73,40 @@ OUTPUT(total_bayar)
 
 | Baris | Aksi | total_awal | jumlah_buku | persen_diskon | nominal_diskon | total_bayar |
 |---|---|---|---|---|---|---|
-| 1 | input diterima: 
+| 1 | input diterima:member, belanja 250.000, beli 4 buku | 250.000 | 4 | - | - | - |  
+| 2 | Validasi: data valid (bukan minus, bukan <1 buku) &rarr; lanjut | 250.000 | 4 | - | - | - |
+| 3 | Validasi diskon: member & syarat tambahan (≥200rb & ≥3 buku) terpenuhi &rarr; diskon | 250.000 | 4 | 0.15 | - | - |
+| 4 | Hitung nominal diskon = 250.000 * 0.15 | 250.000 | 4 | 0.15 | 37.500 | - |
+| 5 | Hitung hasil akhir | 250.000 | 4 | 0.15 | 37.500 | 212.500 |  
+
+### Kasus B: non - member, total_awal = 350.000
+
+| Baris | Aksi | total_awal | jumlah_buku | persen_diskon | nominal_diskon | total_bayar |
+|---|---|---|---|---|---|---|
+| 1 | Input diterima: non-member, belanja 350.000, beli 2 buku | 350.000 | 2 | - | - | - |
+| 2 | Validasi: data valid  &rarr; lanjut | 350.000 | 2 | - | - | - |
+| 3 | Validasi diskon: non-member & belanja ≥300.000 &rarr; diskon 5% | 350.000 | 2 | 0.05 | - | - |
+| 4 | Hitung nominal diskon = 350.000 * 0.05 | 350.000 | 2 | 0.05 | 17.500 | - |
+| 5 | Hitung hasil akhir | 350.000 | 2 | 0.05 | 17.500 | 332.500 |
+
+### Kasus C: non-member, jumlah_buku = 1, total_awal = -50.000, dikoreksi -> 100.000  
+
+| Baris | Aksi | total_awal | jumlah_buku | persen_diskon | nominal_diskon | total_bayar |
+|---|---|---|---|---|---|---|
+| 1 | Input awal (percobaan 1): belanja -50.000 | -50.000 | 1 | - | - | - |
+| 2 | Validasi gagal (belanja < 0) &rarr; tampil error, minta input ulang | 100.000 | 1 | - | - | - |
+| 3 | Validasi ulang berhasil &rarr; lanjut ke pengecekan diskon | 100.000 | 1 | - | - | - |
+| 4 | Validasi diskon: non-member & belanja <300.000 &rarr; diskon 0% | 100.000 | 1 | 0.0 | 0 | - |
+| 5 | Hitung hasil akhir | 100.000 | 1 | 0.0 | 0 | 100.000 |
+
+
+ Ringkasan Hasil
+
+| Kasus | Persen Diskon | Nominal Diskon | Total Bayar |
+|---|---|---|---|
+| A (member) | 15% | Rp 37.500 | Rp 212.500 |
+| B (non-member) | 5% | Rp 17.500 | Rp 332.500 |
+| C (non-member, input dikoreksi) | 0% | Rp 0 | Rp 100.000 |
+
+
 
