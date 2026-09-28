@@ -33,40 +33,45 @@ Program Transaksi_TokoBuku
   total_bayar: Real  
   
 * **Algoritma**  
-    Input data awal  
-INPUT (is_member)  
+    Input data awal    
+INPUT (is_member)    
 INPUT (jumlah_buku)  
 INPUT (total_awal)  
     Validasi data yang di input
-  IF (total_awal < 0) OR (jumlah_buku < 1) THEN   
-OUTPUT("Input tidak valid, silakan masukkan ulang")   
-    Ulangi jika tidak valid, lanjut jika valid   
-UNTIL (total_awal >= 0) AND (jumlah_buku >= 1)   
-    Input status keanggotaan
-INPUT(is_member)
-    Validasi pelanggan member    
-  IF (is_member = True) THEN  
-    Validasi syarat tambahan diskon untuk member   
-  IF (total_awal >= 200000) AND (jumlah_buku >= 3) THEN  
-     diskon 15%, persen_diskon &larr; 0.15 jika syarat terpenuhi    
+  IF (total_awal < 0) OR (jumlah_buku < 1) THEN      
+OUTPUT("Input tidak valid, silakan masukkan ulang")      
+    Ulangi jika tidak valid, lanjut jika valid      
+UNTIL (total_awal >= 0) AND (jumlah_buku >= 1)     
+    Input status keanggotaan  
+INPUT(is_member)  
+    Validasi pelanggan member       
+  IF (is_member = True) THEN   
+    Validasi syarat tambahan diskon untuk member      
+  IF (total_awal >= 200000) AND (jumlah_buku >= 3) THEN   
+     diskon 15%, persen_diskon &larr; 0.15 jika syarat terpenuhi     
 ELSE  
-     diskon 10%, persen_diskon &larr; 0.10 jika syarat tidak terpenuhi   
-ENDIF   
-ELSE
-     Validasi syarat tambahan diskon untuk non-member  
-  IF (total_awal >=300000) THEN  
-     diskon 5%, persen_diskon  0.05 jika syarat terpenuhi  
+     diskon 10%, persen_diskon &larr; 0.10 jika syarat tidak terpenuhi     
+ENDIF     
 ELSE  
-    tanpa diskon, persen_diskon &larr; 0.00 jika syarat tidak terpebuhi  
-ENDIF
-    Hitung nominal diskon   
-nominal_diskon &larr; total_awal * persen_diskon   
-    Hitung total bayar akhir   
-total_bayar &larr; total_awal - nominal_diskon  
-    Tampilkan hasil   
-OUTPUT(nominal_diskon)    
-OUTPUT(total_bayar)
+     Validasi syarat tambahan diskon untuk non-member    
+  IF (total_awal >=300000) THEN    
+     diskon 5%, persen_diskon  0.05 jika syarat terpenuhi    
+ELSE    
+    tanpa diskon, persen_diskon &larr; 0.00 jika syarat tidak terpebuhi    
+ENDIF  
+    Hitung nominal diskon     
+nominal_diskon &larr; total_awal * persen_diskon     
+    Hitung total bayar akhir     
+total_bayar &larr; total_awal - nominal_diskon    
+    Tampilkan hasil     
+OUTPUT(nominal_diskon)      
+OUTPUT(total_bayar)  
 
 
- ## C Trace Table 
- 
+## C Trace Table 
+### Kasus A: Member, total_awal = 250.000, jumlah_buku = 4
+
+| Baris | Aksi | total_awal | jumlah_buku | persen_diskon | nominal_diskon | total_bayar |
+|---|---|---|---|---|---|---|
+| 1 | input diterima: 
+
