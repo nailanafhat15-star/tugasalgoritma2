@@ -1,4 +1,4 @@
-# Tugas Algoritma Pertemuan 1
+# Tugas Algoritma Pertemuan 2
 **Nama:** Ainun Naila Nafhat  
 **Nim:** 1251170013  
 **Kelas:** 3B
@@ -17,8 +17,8 @@
 *  'total_bayar: Real (untuk menyimpan total akhir yang dibayar)
 
 **Identifikasi Struktur Kontrol**
-*  **Sequence:** 
-*  **Percabanga:**
+*  **Sequence:** Digunakan untuk bagian - bagian yang dijalankan secara berurutan dari atas ke bawah tanpa syarat, pada input status keanggotaan, perhitungan diskon dan tottal biaya serta hasil akhir.
+*  **Percabanga:** 
 *  **Perulangan:**
 
 ---
